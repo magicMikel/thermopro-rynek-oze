@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const featured = posts.find(p => p.data.featured) ?? posts[0];
+const latest = posts.filter(p => p.slug !== featured.slug).slice(0, 8);
+---
+
+<BaseLayout title="ThermoPro – Pompy Ciepła i Ogrzewanie">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand to-brand-dark text-white py-14 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-amber-200 text-sm font-semibold uppercase tracking-wider mb-2">Portal ekspercki</p>
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">
+        Pompy ciepła, ogrzewanie<br class="hidden md:block" /> i termomodernizacja
+      </h1>
+      <p class="text-amber-100 text-lg max-w-xl mb-6">
+        Rzetelna wiedza o kosztach, doborze mocy, instalacji i dofinansowaniach. Dla inwestorów i instalatorów.
+      </p>
+      <a href="/posts/" class="inline-block bg-white text-brand font-bold px-6 py-3 rounded-lg hover:bg-amber-50 transition">
+        Przeglądaj artykuły →
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured post -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-brand pl-3">Polecany artykuł</h2>
+    <a href={`/posts/${featured.slug}/`} class="group block bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden md:flex">
+      <div class="md:w-2/3 p-6">
+        {featured.data.category && (
+          <span class="text-xs font-semibold text-brand uppercase tracking-wider">{featured.data.category}</span>
+        )}
+        <h3 class="text-2xl font-bold mt-1 mb-3 group-hover:text-brand transition">{featured.data.title}</h3>
+        <p class="text-gray-600 leading-relaxed">{featured.data.excerpt ?? featured.data.description}</p>
+        <p class="text-sm text-gray-400 mt-4">{featured.data.date.toLocaleDateString('pl-PL', {day:'numeric', month:'long', year:'numeric'})}</p>
+      </div>
+    </a>
+  </section>
+
+  <!-- Latest posts grid -->
+  <section class="max-w-6xl mx-auto px-4 pb-14">
+    <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-brand pl-3">Najnowsze artykuły</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {latest.map(post => (
+        <a href={`/posts/${post.slug}/`} class="group bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <div class="p-5 flex-1">
+            {post.data.category && (
+              <span class="text-xs font-semibold text-brand uppercase">{post.data.category}</span>
+            )}
+            <h3 class="font-semibold mt-1 text-gray-800 group-hover:text-brand transition leading-snug">{post.data.title}</h3>
+            <p class="text-sm text-gray-500 mt-2 line-clamp-2">{post.data.excerpt ?? post.data.description}</p>
+          </div>
+          <div class="px-5 pb-4 text-xs text-gray-400">
+            {post.data.date.toLocaleDateString('pl-PL', {day:'numeric', month:'short', year:'numeric'})}
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 text-center">
+      <a href="/posts/" class="inline-block bg-brand text-white font-semibold px-8 py-3 rounded-lg hover:bg-brand-dark transition">
+        Wszystkie artykuły
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
