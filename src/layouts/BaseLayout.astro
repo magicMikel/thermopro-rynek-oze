@@ -32,6 +32,19 @@ const ogImage = new URL(image, siteUrl).href;
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
 
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="eQ1nUNke_I4UJbsPliIsCXPJ2OPSGKZeZbi3DVMrzsI" />
+
+  <!-- Google Analytics 4 -->
+  <!-- TODO: zastąp G-XXXXXXXXXX swoim Measurement ID z analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:type" content={type} />
   <meta property="og:title" content={title} />
