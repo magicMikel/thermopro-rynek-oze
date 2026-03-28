@@ -11,13 +11,13 @@ export interface Props {
 
 const {
   title,
-  description = 'Portal o pompach ciepła, ogrzewaniu i termomodernizacji. Koszty, dobór mocy, instalacja, dofinansowania.',
+  description = 'Portal o odnawialnych źródłach energii – pompy ciepła, panele PV, falowniki, magazyny energii. Rankingi, koszty, dofinansowania.',
   image = '/img/og-default.jpg',
   date,
   type = 'website',
 } = Astro.props;
 
-const siteName = 'ThermoPro';
+const siteName = 'Rynek OZE';
 const siteUrl = 'https://rynek-oze.pl';
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = new URL(image, siteUrl).href;
@@ -81,15 +81,16 @@ const ogImage = new URL(image, siteUrl).href;
     })} />
   )}
 </head>
-<body class="bg-amber-50 text-gray-900 font-sans">
+<body class="bg-green-50 text-gray-900 font-sans">
 
   <!-- Navbar -->
   <header class="bg-brand sticky top-0 z-50 shadow-md">
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="text-white font-bold text-xl tracking-tight">🌡️ ThermoPro</a>
+      <a href="/" class="text-white font-bold text-xl tracking-tight">⚡ Rynek OZE</a>
       <div class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="/posts/" class="text-amber-100 hover:text-white transition">Artykuły</a>
-        <a href="/o-serwisie/" class="text-amber-100 hover:text-white transition">O serwisie</a>
+        <a href="/posts/" class="text-green-100 hover:text-white transition">Artykuły</a>
+        <a href="/ranking/" class="text-green-100 hover:text-white transition">Ranking OZE</a>
+        <a href="/o-serwisie/" class="text-green-100 hover:text-white transition">O serwisie</a>
       </div>
     </nav>
   </header>
@@ -102,8 +103,8 @@ const ogImage = new URL(image, siteUrl).href;
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 mt-16 py-10">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm">
-      <p class="text-white font-semibold mb-2">ThermoPro – rynek-oze.pl</p>
-      <p>Portal o pompach ciepła, ogrzewaniu i termomodernizacji</p>
+      <p class="text-white font-semibold mb-2">Rynek OZE – rynek-oze.pl</p>
+      <p>Portal o odnawialnych źródłach energii – pompy ciepła, panele PV, falowniki, magazyny energii</p>
       <p class="mt-4">&copy; 2026 rynek-oze.pl | <a href="/polityka-prywatnosci/" class="hover:text-white">Polityka prywatności</a></p>
     </div>
   </footer>

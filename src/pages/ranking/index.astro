@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const updateDate = '2026-03-28';
+
+const categories = [
+  {
+    id: 'panele-pv',
+    icon: '☀️',
+    title: 'Panele PV',
+    description: 'Porównanie modułów fotowoltaicznych wg sprawności, gwarancji i wiarygodności producenta.',
+    count: 22,
+    products: [
+      { rank: 1, name: 'Aiko Solar Neostar 3P 640W', score: 9.4, efficiency: '24.1%', warranty: '30 lat', note: 'Najwyższa sprawność w kategorii' },
+      { rank: 2, name: 'Maxeon 7 AC Module 605W', score: 9.1, efficiency: '23.3%', warranty: '40 lat', note: 'Rekordowa gwarancja produktowa' },
+      { rank: 3, name: 'REC Alpha Pure-R 430W', score: 8.8, efficiency: '22.3%', warranty: '25 lat', note: 'Topowy stosunek jakości do ceny' },
+      { rank: 4, name: 'Longi Hi-MO X6 615W', score: 8.5, efficiency: '22.8%', warranty: '25 lat', note: 'Popularny wybór instalatorów' },
+      { rank: 5, name: 'Jinko Tiger Neo N-type 610W', score: 8.3, efficiency: '22.6%', warranty: '25 lat', note: 'Dobra dostępność i serwis' },
+    ],
+  },
+  {
+    id: 'pompy-ciepla',
+    icon: '🌡️',
+    title: 'Pompy ciepła',
+    description: 'Porównanie pomp ciepła wg SCOP/COP, pracy w niskich temperaturach i jakości serwisu.',
+    count: 22,
+    products: [
+      { rank: 1, name: 'Panasonic AQUAREA WH-MDC09J3E5', score: 9.5, efficiency: 'SCOP 5.1', warranty: '5 lat', note: 'Praca do -28°C, cicha praca' },
+      { rank: 2, name: 'Daikin Altherma 3 R 8 kW', score: 9.2, efficiency: 'SCOP 4.9', warranty: '5 lat', note: 'Najlepsza sieć serwisowa w Polsce' },
+      { rank: 3, name: 'Mitsubishi Ecodan PUHZ-SHW80VHA', score: 9.0, efficiency: 'SCOP 4.8', warranty: '5 lat', note: 'Zimo praca do -28°C' },
+      { rank: 4, name: 'Bosch Compress 7800i AW 9 kW', score: 8.6, efficiency: 'SCOP 4.6', warranty: '5 lat', note: 'Solidna marka, dobre wsparcie' },
+      { rank: 5, name: 'Viessmann Vitocal 250-A 10 kW', score: 8.4, efficiency: 'SCOP 4.5', warranty: '5 lat', note: 'Premium jakość wykonania' },
+    ],
+  },
+  {
+    id: 'falowniki',
+    icon: '⚡',
+    title: 'Falowniki',
+    description: 'Zestawienie falowników pod kątem niezawodności, funkcji i jakości wykonania.',
+    count: 12,
+    products: [
+      { rank: 1, name: 'FoxESS T8-G3', score: 9.3, efficiency: '98.6%', warranty: '10 lat', note: 'Hybrydowy, świetne monitorowanie' },
+      { rank: 2, name: 'Sungrow SG10RT', score: 9.1, efficiency: '98.4%', warranty: '10 lat', note: 'Lider sprzedaży globalnie' },
+      { rank: 3, name: 'GoodWe GW6.5KN-ET PLUS+', score: 8.9, efficiency: '98.3%', warranty: '10 lat', note: 'Hybrydowy, kompatybilny z wieloma baterami' },
+      { rank: 4, name: 'Fronius Symo GEN24 8.0 Plus', score: 8.7, efficiency: '98.1%', warranty: '10 lat', note: 'Topowa marka premium' },
+      { rank: 5, name: 'SMA Sunny Tripower 10.0', score: 8.5, efficiency: '98.0%', warranty: '10 lat', note: 'Bardzo niski poziom hałasu' },
+    ],
+  },
+  {
+    id: 'magazyny-energii',
+    icon: '🔋',
+    title: 'Magazyny energii',
+    description: 'Porównanie magazynów energii wg chemii ogniw, cykli życia i gwarancji.',
+    count: 9,
+    products: [
+      { rank: 1, name: 'DEYE SE-G5.1 PRO-B', score: 9.2, efficiency: 'LiFePO4 5.1 kWh', warranty: '10 lat / 6000 cykli', note: 'Świetny stosunek ceny do pojemności' },
+      { rank: 2, name: 'Pylontech US5000 4.89 kWh', score: 9.0, efficiency: 'LiFePO4 4.89 kWh', warranty: '10 lat / 6000 cykli', note: 'Modułowa budowa, proven track record' },
+      { rank: 3, name: 'Pylontech US3000C 3.55 kWh', score: 8.8, efficiency: 'LiFePO4 3.55 kWh', warranty: '10 lat / 6000 cykli', note: 'Najpopularniejszy w Polsce' },
+      { rank: 4, name: 'BYD Battery-Box Premium HVS 5.1', score: 8.6, efficiency: 'LFP 5.12 kWh', warranty: '10 lat', note: 'Wysoka jakość ogniw BYD Blade' },
+      { rank: 5, name: 'Huawei LUNA2000-5-S0', score: 8.4, efficiency: 'LFP 5 kWh', warranty: '10 lat', note: 'Integracja z inwerterem Huawei' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Ranking OZE 2026 – Panele PV, Pompy Ciepła, Falowniki, Magazyny Energii"
+  description="Transparentny ranking sprzętu OZE oparty o parametry techniczne, ceny rynkowe i kryteria jakości. Panele PV, pompy ciepła, falowniki i magazyny energii."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand to-brand-dark text-white py-10 px-4">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-green-200 mb-4">
+        <a href="/" class="hover:text-white">Strona główna</a>
+        <span class="mx-2">/</span>
+        <span>Ranking OZE</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Ranking produktów OZE 2026</h1>
+      <p class="text-green-100 text-lg max-w-2xl mb-2">
+        Transparentny ranking sprzętu OZE oparty o parametry techniczne, ceny rynkowe i kryteria jakości.
+      </p>
+      <p class="text-green-200 text-sm">
+        Aktualizacja danych: <strong class="text-white">{updateDate}</strong> ·
+        <a href="/metodologia-rankingu/" class="underline hover:text-white">Jak budujemy ranking?</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <div class="bg-white border-b border-gray-200 sticky top-16 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex gap-6 overflow-x-auto text-sm font-medium">
+      {categories.map(cat => (
+        <a href={`#${cat.id}`} class="whitespace-nowrap text-gray-600 hover:text-brand transition flex items-center gap-1.5">
+          <span>{cat.icon}</span> {cat.title}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Ranking sections -->
+  <div class="max-w-6xl mx-auto px-4 py-10 space-y-16">
+
+    {categories.map(cat => (
+      <section id={cat.id}>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-4xl">{cat.icon}</span>
+          <h2 class="text-2xl font-bold text-gray-900">{cat.title}</h2>
+          <span class="ml-auto text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{cat.count} produktów</span>
+        </div>
+        <p class="text-gray-600 mb-6">{cat.description}</p>
+
+        <div class="space-y-3">
+          {cat.products.map(p => (
+            <div class={`bg-white rounded-xl shadow-sm border-l-4 p-5 flex items-center gap-4 ${p.rank === 1 ? 'border-yellow-400' : p.rank === 2 ? 'border-gray-300' : p.rank === 3 ? 'border-orange-300' : 'border-gray-100'}`}>
+              <!-- Rank badge -->
+              <div class={`w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0 ${p.rank === 1 ? 'bg-yellow-400 text-white' : p.rank === 2 ? 'bg-gray-300 text-white' : p.rank === 3 ? 'bg-orange-300 text-white' : 'bg-gray-100 text-gray-500'}`}>
+                {p.rank === 1 ? '🥇' : p.rank === 2 ? '🥈' : p.rank === 3 ? '🥉' : p.rank}
+              </div>
+              <!-- Name & note -->
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-gray-900 leading-snug">{p.name}</h3>
+                <p class="text-sm text-gray-500 mt-0.5">{p.note}</p>
+              </div>
+              <!-- Specs -->
+              <div class="hidden sm:flex flex-col items-end text-right gap-1 text-sm">
+                <span class="text-gray-700 font-medium">{p.efficiency}</span>
+                <span class="text-gray-400 text-xs">Gwarancja: {p.warranty}</span>
+              </div>
+              <!-- Score -->
+              <div class="flex-shrink-0 text-right">
+                <div class={`text-2xl font-bold ${p.score >= 9 ? 'text-green-600' : 'text-brand'}`}>{p.score}</div>
+                <div class="text-xs text-gray-400">/ 10</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- Disclaimer -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-sm text-gray-600">
+      <p><strong>Ważne:</strong> Ranking ma charakter informacyjny i jest oparty o publicznie dostępne dane techniczne oraz opinie instalatorów.
+      Jeśli klikniesz link partnerski lub wyślesz zapytanie, możemy otrzymać wynagrodzenie od partnerów.
+      Nie wpływa to na kolejność produktów.
+      Szczegóły: <a href="/metodologia-rankingu/" class="text-brand hover:underline">metodologia rankingu</a>.</p>
+    </div>
+
+  </div>
+
+</BaseLayout>

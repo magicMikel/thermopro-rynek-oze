@@ -9,21 +9,26 @@ const featured = posts.find(p => p.data.featured) ?? posts[0];
 const latest = posts.filter(p => p.slug !== featured.slug).slice(0, 8);
 ---
 
-<BaseLayout title="ThermoPro – Pompy Ciepła i Ogrzewanie">
+<BaseLayout title="Rynek OZE – Odnawialne Źródła Energii">
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand to-brand-dark text-white py-14 px-4">
     <div class="max-w-6xl mx-auto">
-      <p class="text-amber-200 text-sm font-semibold uppercase tracking-wider mb-2">Portal ekspercki</p>
+      <p class="text-green-200 text-sm font-semibold uppercase tracking-wider mb-2">Portal ekspercki</p>
       <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">
-        Pompy ciepła, ogrzewanie<br class="hidden md:block" /> i termomodernizacja
+        Pompy ciepła, panele PV,<br class="hidden md:block" /> falowniki i magazyny energii
       </h1>
-      <p class="text-amber-100 text-lg max-w-xl mb-6">
-        Rzetelna wiedza o kosztach, doborze mocy, instalacji i dofinansowaniach. Dla inwestorów i instalatorów.
+      <p class="text-green-100 text-lg max-w-xl mb-6">
+        Rzetelna wiedza o kosztach, doborze, instalacji i dofinansowaniach OZE. Rankingi sprzętu dla inwestorów i instalatorów.
       </p>
-      <a href="/posts/" class="inline-block bg-white text-brand font-bold px-6 py-3 rounded-lg hover:bg-amber-50 transition">
-        Przeglądaj artykuły →
-      </a>
+      <div class="flex flex-wrap gap-3">
+        <a href="/ranking/" class="inline-block bg-white text-brand font-bold px-6 py-3 rounded-lg hover:bg-green-50 transition">
+          Ranking OZE →
+        </a>
+        <a href="/posts/" class="inline-block border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition">
+          Przeglądaj artykuły
+        </a>
+      </div>
     </div>
   </section>
 
@@ -64,6 +69,41 @@ const latest = posts.filter(p => p.slug !== featured.slug).slice(0, 8);
     <div class="mt-8 text-center">
       <a href="/posts/" class="inline-block bg-brand text-white font-semibold px-8 py-3 rounded-lg hover:bg-brand-dark transition">
         Wszystkie artykuły
+      </a>
+    </div>
+  </section>
+
+  <!-- Categories shortcut -->
+  <section class="max-w-6xl mx-auto px-4 pb-14">
+    <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-brand pl-3">Kategorie OZE</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/ranking/#panele-pv" class="bg-white rounded-xl shadow hover:shadow-md transition p-5 flex items-start gap-3">
+        <span class="text-3xl">☀️</span>
+        <div>
+          <h3 class="font-bold text-gray-800">Panele PV</h3>
+          <p class="text-sm text-gray-500 mt-1">Ranking modułów fotowoltaicznych wg sprawności i gwarancji</p>
+        </div>
+      </a>
+      <a href="/ranking/#pompy-ciepla" class="bg-white rounded-xl shadow hover:shadow-md transition p-5 flex items-start gap-3">
+        <span class="text-3xl">🌡️</span>
+        <div>
+          <h3 class="font-bold text-gray-800">Pompy ciepła</h3>
+          <p class="text-sm text-gray-500 mt-1">Porównanie SCOP/COP i pracy w niskich temperaturach</p>
+        </div>
+      </a>
+      <a href="/ranking/#falowniki" class="bg-white rounded-xl shadow hover:shadow-md transition p-5 flex items-start gap-3">
+        <span class="text-3xl">⚡</span>
+        <div>
+          <h3 class="font-bold text-gray-800">Falowniki</h3>
+          <p class="text-sm text-gray-500 mt-1">Zestawienie falowników wg niezawodności i funkcji</p>
+        </div>
+      </a>
+      <a href="/ranking/#magazyny-energii" class="bg-white rounded-xl shadow hover:shadow-md transition p-5 flex items-start gap-3">
+        <span class="text-3xl">🔋</span>
+        <div>
+          <h3 class="font-bold text-gray-800">Magazyny energii</h3>
+          <p class="text-sm text-gray-500 mt-1">Porównanie chemii ogniw, cykli życia i gwarancji</p>
+        </div>
       </a>
     </div>
   </section>

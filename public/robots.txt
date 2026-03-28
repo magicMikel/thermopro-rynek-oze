@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404
 
-Sitemap: https://rynek-oze.pl/sitemap-index.xml
+Sitemap: https://rynek-oze.pl/sitemap.xml

@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Metodologia rankingu OZE – Rynek OZE"
+  description="Dowiedz się, jak budujemy ranking sprzętu OZE. Transparentne kryteria oceny paneli PV, pomp ciepła, falowników i magazynów energii."
+>
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:text-brand">Strona główna</a>
+      <span class="mx-2">/</span>
+      <a href="/ranking/" class="hover:text-brand">Ranking OZE</a>
+      <span class="mx-2">/</span>
+      <span>Metodologia</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-6">Metodologia rankingu OZE</h1>
+
+    <div class="prose prose-gray prose-headings:font-bold prose-a:text-brand max-w-none">
+
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Nasz ranking jest budowany w sposób transparentny i niezależny od relacji handlowych.
+        Poniżej przedstawiamy szczegółowe kryteria oceny dla każdej kategorii sprzętu OZE.
+      </p>
+
+      <h2>Ogólne zasady oceny</h2>
+      <ul>
+        <li>Dane techniczne pobieramy z oficjalnych kart katalogowych producentów.</li>
+        <li>Ceny rynkowe weryfikujemy w co najmniej 5 niezależnych sklepach i hurtowniach instalacyjnych.</li>
+        <li>Opinie serwisowe zbieramy od instalatorów z co najmniej 3-letnim doświadczeniem w montażu danej kategorii.</li>
+        <li>Ranking aktualizujemy minimum raz na kwartał lub przy istotnych zmianach na rynku.</li>
+      </ul>
+
+      <h2>☀️ Panele PV – kryteria oceny</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-gray-200 rounded-lg">
+          <thead class="bg-green-50">
+            <tr>
+              <th class="text-left p-3 font-semibold">Kryterium</th>
+              <th class="text-left p-3 font-semibold">Waga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="p-3">Sprawność ogniw (%)</td><td class="p-3">30%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Gwarancja produktowa i liniowa</td><td class="p-3">25%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Wiarygodność i historia producenta</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Cena za Wp</td><td class="p-3">15%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Dostępność w Polsce</td><td class="p-3">10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>🌡️ Pompy ciepła – kryteria oceny</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-gray-200 rounded-lg">
+          <thead class="bg-green-50">
+            <tr>
+              <th class="text-left p-3 font-semibold">Kryterium</th>
+              <th class="text-left p-3 font-semibold">Waga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="p-3">SCOP (sezonowy współczynnik sprawności)</td><td class="p-3">30%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Minimalna temperatura pracy</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Jakość serwisu w Polsce</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Poziom głośności (dB)</td><td class="p-3">15%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Cena zakupu i eksploatacji</td><td class="p-3">15%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>⚡ Falowniki – kryteria oceny</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-gray-200 rounded-lg">
+          <thead class="bg-green-50">
+            <tr>
+              <th class="text-left p-3 font-semibold">Kryterium</th>
+              <th class="text-left p-3 font-semibold">Waga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="p-3">Sprawność konwersji (%)</td><td class="p-3">30%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Niezawodność i historia awarii</td><td class="p-3">25%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Funkcje monitoringu i integracji</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Gwarancja</td><td class="p-3">15%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Wsparcie techniczne w Polsce</td><td class="p-3">10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>🔋 Magazyny energii – kryteria oceny</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-gray-200 rounded-lg">
+          <thead class="bg-green-50">
+            <tr>
+              <th class="text-left p-3 font-semibold">Kryterium</th>
+              <th class="text-left p-3 font-semibold">Waga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="p-3">Chemia ogniw (LFP preferowana)</td><td class="p-3">25%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Liczba gwarantowanych cykli</td><td class="p-3">25%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Gwarancja (lata)</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100 bg-gray-50"><td class="p-3">Cena za kWh pojemności</td><td class="p-3">20%</td></tr>
+            <tr class="border-t border-gray-100"><td class="p-3">Modułowość i skalowalność</td><td class="p-3">10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Niezależność redakcyjna</h2>
+      <p>
+        Żaden producent ani dystrybutor nie ma wpływu na oceny produktów w rankingu. Relacje handlowe
+        (reklamy, linki partnerskie) są wyraźnie oznaczone i oddzielone od treści merytorycznych.
+        Redakcja zastrzega sobie prawo do usunięcia produktu z rankingu w przypadku stwierdzenia
+        rażących rozbieżności między danymi katalogowymi a rzeczywistymi parametrami potwierdzonymi przez instalatorów.
+      </p>
+    </div>
+
+    <div class="mt-10">
+      <a href="/ranking/" class="inline-block bg-brand text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-brand-dark transition">
+        ← Wróć do rankingu OZE
+      </a>
+    </div>
+  </div>
+</BaseLayout>
